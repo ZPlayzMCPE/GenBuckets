@@ -37,26 +37,26 @@ class Main extends PluginBase implements Listener
 				"cobble" => [
 					"blockId" => 4,
 					"bucketDamage" => 4,
-					"bucketPrice" => 100,
-					"bucketName" => TextFormat::GRAY . "Cobble Bucket",
+					"bucketPrice" => 1000,
+					"bucketName" => TextFormat::GOLD . "Cobble Bucket",
 				],
 				"sand" => [
 					"blockId" => 12,
 					"bucketDamage" => 12,
-					"bucketPrice" => 1000,
-					"bucketName" => TextFormat::YELLOW . "Sand Bucket",
+					"bucketPrice" => 10000,
+					"bucketName" => TextFormat::GOLD . "Sand Bucket",
 				],
 				"obsidian" => [
 					"blockId" => 49,
 					"bucketDamage" => 49,
-					"bucketPrice" => 15000,
-					"bucketName" => TextFormat::BLACK . "Obsidian Bucket",
+					"bucketPrice" => 150000,
+					"bucketName" => TextFormat::GOLD . "Obsidian Bucket",
 				],
 				"bedrock" => [
 					"blockId" => 7,
 					"bucketDamage" => 7,
-					"bucketPrice" => 150000,
-					"bucketName" => TextFormat::DARK_GRAY . "Bedrock Bucket",
+					"bucketPrice" => 1500000,
+					"bucketName" => TextFormat::GOLD . "Bedrock Bucket",
 				],
 			]
 		]);
@@ -65,7 +65,6 @@ class Main extends PluginBase implements Listener
 	}
 
 	public function onEnable(){
-        $this->getLogger()->info('GenBuckets Loaded');
 
         $this->eco = EconomyAPI::getInstance();
 
