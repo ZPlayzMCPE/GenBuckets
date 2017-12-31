@@ -75,7 +75,7 @@ class Main extends PluginBase implements Listener
         $this->getLogger()->info('GenBuckets Disabled');
 	}
 
-	public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool{
+	public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
 		if($command->getName() === "gbuy"){
 			if(isset($args[0])){
 				if($sender instanceof Player){
