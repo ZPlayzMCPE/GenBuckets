@@ -107,14 +107,13 @@ class Main extends PluginBase implements Listener
 				foreach($this->buckets as $bucket){
 					$sender->sendMessage($bucket["bucketName"] . TextFormat::RESET . TextFormat::AQUA . " - " . TextFormat::RESET . TextFormat::GOLD . "$" . $bucket["bucketPrice"] . TextFormat::RESET);
 					$i++;
-					return true;
 				}
 			}
 		}
 		return true;
 	}
 
-	public function onHeld(PlayerItemHeldEvent $event){
+	/*public function onHeld(PlayerItemHeldEvent $event){
 		$player = $event->getPlayer();
 		$i = $player->getInventory()->getItemInHand();
 
