@@ -110,7 +110,7 @@ class Main extends PluginBase implements Listener
 		return true;
 	}
 
-	/*public function onHeld(PlayerItemHeldEvent $event){
+	public function onHeld(PlayerItemHeldEvent $event){
 		$player = $event->getPlayer();
 		$i = $player->getInventory()->getItemInHand();
 
