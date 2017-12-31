@@ -91,11 +91,14 @@ class Main extends PluginBase implements Listener
 
 							$sender->getInventory()->addItem($bucket);
 							$sender->sendMessage(TextFormat::GREEN . "Purchased " . $arr["bucketName"] . TextFormat::RESET);
+							return true;
 						} else {
 							$sender->sendMessage(TextFormat::RED . "Not enough money." . TextFormat::RESET);
+							return true;
 						}
 					} else {
 						$sender->sendMessage(TextFormat::RED . "Bucket does not exist. Use /gbuy to get a list of available GenBuckets." . TextFormat::RESET);
+						return true;
 					}
 				}
 			} else {
@@ -104,6 +107,7 @@ class Main extends PluginBase implements Listener
 				foreach($this->buckets as $bucket){
 					$sender->sendMessage($bucket["bucketName"] . TextFormat::RESET . TextFormat::AQUA . " - " . TextFormat::RESET . TextFormat::GOLD . "$" . $bucket["bucketPrice"] . TextFormat::RESET);
 					$i++;
+					return true;
 				}
 			}
 		}
@@ -118,6 +122,7 @@ class Main extends PluginBase implements Listener
 			foreach($this->buckets as $bucket){
 				if($i->getdamage() === $bucket["bucketDamage"]){
 					$player->sendPopup($bucket["bucketName"]); // #BlameMojang
+					return true;
 				}
 			}
 		}
@@ -171,6 +176,7 @@ class Main extends PluginBase implements Listener
 							if(!($evLEVEL->getBlock(new Vector3($x, $y, $z)) instanceof Solid)){
 								$evLEVEL->setBlock(new Vector3($x, $y, $z), Block::get($bucket["blockId"]), false, false);
 								$y--;
+								return true;
 							} else {
 								break;
 							}
